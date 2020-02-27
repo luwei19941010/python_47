@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.判断当前数组是否为数组，返回值是true，则证明是数组
+			var num=123;
+			var arr=['aaa','bbb','ccc'];
+			console.log(Array.isArray(arr));
+			console.log(arr.toString());//aaa,bbb,ccc
+			console.log(num.toString());
+			console.log(typeof num.toString());
+			console.log(arr.join('!'));
+			console.log(arr.push('ddd'));//返回数据的最新长度
+			console.log(arr);
+			console.log(arr.pop(),arr)//pop最后一项，返回删除的内容
+			console.log(arr.shift());//删除第一项,返回删除的内容
+			console.log(arr);
+			console.log(arr.unshift('eee','fff'),arr);//往数组的第一项上添加内容
+			
+			var colors = ['red','blue','green','yellow','purple'];
+			console.log(colors.slice(1));//["blue", "green", "yellow", "purple"]
+			console.log(colors.slice(1,4));// ["blue", "green", "yellow"]
+			
+			var colors = ["red", "green", "blue"];
+			var removed = colors.splice(0,1); 
+			// alert(colors); // green,blue 
+			// alert(removed); // red，返回的数组中只包含一项
+			removed = colors.splice(1, 0, "yellow", "orange"); 
+			// alert(colors); // green,yellow,orange,blue alert(removed); // 返回的是一个空数组
+			removed = colors.splice(1, 1, "red", "purple"); 
+			// alert(colors); // green,red,purple,orange,blue alert(removed); // yellow，返回的数组中只包含一项
+			
+			var numbers = [1,2,1,3,4,12,1,3,2,4,3,2,1];
+			console.log(numbers.indexOf(4)); //3
+			console.log(numbers.lastIndexOf(4));// 5
+			console.log(numbers.indexOf(4,4));// 5 (需要找值，从哪个索引位置)
+			console.log(numbers.lastIndexOf(4,5));//3(需要找值，从哪个索引位置)
+			var person = {name:"mjj"};
+			var people = [{name:'mjj'}];
+			var morePeople = [person];
+			console.log(people.indexOf(person)); //-1
+			console.log(morePeople.indexOf(person));// 0
+			
+			var names = ['女神','wusir','太白'];
+			names.forEach(function (item,index) {
+            console.log(index);
+			console.log(item);
+        });
+        function  fn(a,b) {
+            //arguments.length 代指的实参的个数
+            //arguments它不是一个数组，它被称为叫伪数组
+            console.log(arguments);
+            for(var i = 0; i < arguments.length; i++){
+                console.log(arguments[i]);
+            }
+        }
+        fn(2,3,4);
+        console.log(fn.length);//形参的个数
+
+        var  str = '            mjj          '
+
+
+		</script>
+	</body>
+</html>

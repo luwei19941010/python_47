@@ -6,7 +6,47 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			
+		//1.字面量创建方式
+		var obj={};
+		obj.name='luwei';//给对象添加内容
+		obj.fav=function(){
+			//obj
+			console.log(this);
+		};
+		obj.fav();
+		obj.name='weilu';
+		console.log(obj.name);
+		
+		//构造函数
+		var obj2=new Object();
+		console.log(obj2);
+		obj2.name='luweiweiwei';
+		console.log(obj2.name);
+		
+		function add(x,y){
+			console.log(this.name);
+			console.log(x);
+			console.log(y);
+		};
+		console.dir(add);//dir查看add属性和方法
+		add();
+		add.call(obj,1,2);//add.call()等于add(),但.call能改变this指向
+		add.apply(obj,[1,2]);//类似call，传参使用[1,2]
+		
+		(function (){console.log(this)})();//匿名函数
+		
+		class person{
+			constructor(name,age) {
+			    //初始化
+				this.name=name;
+				this.age=age;
+			};
+			fav(){
+				console.log(this.name);
+			}
+		};
+		var p=new person('luweiiiii',18);
+		p.fav();
 		</script>
 	</body>
 </html>

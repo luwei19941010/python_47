@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id='time'></h2>
+		<script>
+		    var date = new Date();
+		    console.log(date);
+		    console.log(date.getDate());
+		    console.log(date.getMonth()+1);
+		    console.log(date.getFullYear());
+		    console.log(date.getDay());
+		    console.log(date.getHours());
+		    console.log(date.getMinutes());
+		    console.log(date.getSeconds());
+		
+		    console.log(date.toLocaleString());
+		    /*var weeks = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+		    console.log(weeks[date.getDay()]);
+		    var day = weeks[date.getDay()];
+		    document.write(`<a href="#">${day}</a>`);*/
+		
+		    var a =  1 < 2 ? "yes": "no";
+		    console.log(a);
+		var timeobj=document.getElementById('time')
+		//console.log(time);
+		function gettime(){
+			var time=new Date();
+			var hour = time.getHours();
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			var temp = "" + ((hour > 12) ? hour - 12 : hour);
+			if (hour == 0) {
+				temp = "12";
+			}
+			temp += ((minute < 10) ? ":0" : ":") + minute;
+			temp += ((second < 10) ? ":0" : ":") + second;
+			temp += (hour >= 12) ? " P.M." : " A.M.";
+			timeobj.innerText = temp;
+    }
+		setInterval(gettime)
+		</script>
+	</body>
+</html>
