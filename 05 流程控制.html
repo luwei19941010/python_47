@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var score=100;
+			if(score>80){
+				console.log('可以吃鸡了');	
+			}else if(60<score<80){
+				console.log('在家呆着');
+			};
+			var weather=prompt('请输入今天的天气');
+			switch(weather){
+				case '晴天':
+					console.log('可以吃鸡了');
+					break;
+				case '下雨':
+					console.log('可以睡觉');
+					break;
+				default:
+					console.log('起飞');
+			};
+			var a=2;
+			var b='2';
+			console.log(a==b);//js将数值比较的是数值,js自动将数字转为字符
+			console.log(a===b);//比较的值与数据类型
+		</script>
+	</body>
+</html>
